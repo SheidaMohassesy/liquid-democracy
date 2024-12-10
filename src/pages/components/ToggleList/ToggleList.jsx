@@ -58,7 +58,7 @@ const ToggleList = () => {
 
   return (
     <div className={styles.toggleList}>
-      <div className={styles.result}>300 result</div>
+      <div className={styles.result}>300 Results</div>
       <div className={styles.tabs}>
         <TabItem
           label="List"
