@@ -1,8 +1,15 @@
+@import "../../../styles/mixins";
 .toggleList {
   margin: 80px;
-  display: flex;
+
   flex-direction: row;
   align-items: center;
+  display: none;
+
+  @include in-desktop() {
+    display: flex;
+  }
+
   .result {
     flex: 1;
   }
