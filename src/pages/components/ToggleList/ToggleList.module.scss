@@ -1,0 +1,41 @@
+.toggleList {
+  margin: 80px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  .result {
+    flex: 1;
+  }
+  .tabs {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+
+    .tab {
+      display: flex;
+      flex-direction: row;
+      padding: 5px 10px;
+      color: black;
+      background-color: white;
+      border: 2px solid black;
+      cursor: default;
+      width: 80px;
+      align-self: stretch;
+
+      &:hover {
+        cursor: pointer;
+      }
+      &Selected {
+        background-color: black;
+        color: white;
+      }
+
+      .image {
+        display: flex;
+      }
+      .label {
+        margin-left: 5px;
+      }
+    }
+  }
+}
