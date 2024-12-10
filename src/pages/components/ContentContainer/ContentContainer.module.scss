@@ -1,0 +1,10 @@
+@import "../../../styles/mixins.scss";
+
+.contentContainer {
+  min-width: 360px;
+  margin: auto auto;
+
+  @include in-desktop() {
+    min-width: 720px;
+  }
+}
