@@ -19,7 +19,7 @@ const HeaderItem = ({ image, label }) => {
 const Header = () => {
   return (
     <div className={styles.header}>
-      <div>Project Overview</div>
+      <div className={styles.title}>Project Overview</div>
       <div className={styles.headerMenu}>
         <HeaderItem
           label="Accessible"

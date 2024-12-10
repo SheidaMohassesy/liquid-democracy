@@ -1,3 +1,5 @@
+@import "variables";
+
 // Responsive mixin
 @mixin respond-to($device) {
   $size: map-get($breakpoints, $device);
@@ -7,5 +9,11 @@
     }
   } @else {
     @error "Unknown device '#{$device}'. Please use one of: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin in-desktop() {
+  @media (min-width: $tablet) {
+    @content;
   }
 }
