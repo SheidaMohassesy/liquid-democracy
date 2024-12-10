@@ -17,7 +17,9 @@ const Card = ({ title, description, location, copyright, image }) => {
         </div>
         <div
           className={`${styles.contentWrapper} ${
-            isListSelected ? styles.leftGapWrapper : styles.topGapWrapper
+            isListSelected
+              ? `${styles.leftGapWrapper} ${styles.listContentWrapper}`
+              : styles.topGapWrapper
           }`}
         >
           <div className={styles.location}>{location}</div>
