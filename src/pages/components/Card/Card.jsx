@@ -21,12 +21,12 @@ const Card = ({ title, description, location, copyright, image, days }) => {
       <div className={isListSelected ? styles.listView : styles.gridView}>
         <div className={styles.imageWrapper}>
           <img className={styles.image} src={image} />
-          <span
+          <div
             className={styles.copyright}
             aria-label={`Copyright: ${copyright}`}
           >
             {copyright}
-          </span>
+          </div>
         </div>
         <div
           className={`${styles.contentWrapper} ${
