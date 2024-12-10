@@ -46,7 +46,12 @@ const TabItem = ({ label, isSelected, onTabItemClickHandler, children }) => {
   }
 
   return (
-    <div className={classes} onClick={onTabItemClickHandler}>
+    <div
+      className={classes}
+      onClick={onTabItemClickHandler}
+      aria-selected={isSelected}
+      aria-label={label}
+    >
       {children}
       <div className={styles.label}>{label}</div>
     </div>
@@ -57,7 +62,7 @@ const ToggleList = () => {
   const { isListSelected, setIsListSelected } = useAppContext();
 
   return (
-    <div className={styles.toggleList}>
+    <div className={styles.toggleList} role="tablist">
       <div className={styles.result}>300 Results</div>
       <div className={styles.tabs}>
         <TabItem

@@ -40,10 +40,18 @@ const ContentContainer = () => {
     />
   ));
   return (
-    <div className={styles.contentContainer}>
-      <ToggleList />
-      {isListSelected && <ListView>{mockCards}</ListView>}
-      {!isListSelected && <GridView>{mockCards}</GridView>}
+    <div
+      className={styles.contentContainer}
+      role="region"
+      aria-labelledby="contentContainerTitle"
+    >
+      <ToggleList aria-label="Toggle between list and grid view" />
+      {isListSelected && (
+        <ListView aria-labelledby="listViewTitle">{mockCards}</ListView>
+      )}
+      {!isListSelected && (
+        <GridView aria-labelledby="gridViewTitle">{mockCards}</GridView>
+      )}
     </div>
   );
 };

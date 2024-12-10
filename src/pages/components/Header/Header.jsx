@@ -3,7 +3,7 @@ import styles from "./Header.module.scss";
 
 const HeaderItem = ({ image, label }) => {
   return (
-    <div className={styles.headerItem}>
+    <div className={styles.headerItem} role="menuitem" aria-label={label}>
       <Image
         src={image}
         alt="test"
@@ -18,9 +18,15 @@ const HeaderItem = ({ image, label }) => {
 
 const Header = () => {
   return (
-    <div className={styles.header}>
-      <div className={styles.title}>Project Overview</div>
-      <div className={styles.headerMenu}>
+    <div className={styles.header} role="banner">
+      <div className={styles.title} role="heading" aria-level="1">
+        Project Overview
+      </div>
+      <div
+        className={styles.headerMenu}
+        role="navigation"
+        aria-label="Main Menu"
+      >
         <HeaderItem
           label="Accessible"
           image="assets/images/img-accessibility.svg"
