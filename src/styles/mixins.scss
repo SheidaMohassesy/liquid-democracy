@@ -1,0 +1,11 @@
+// Responsive mixin
+@mixin respond-to($device) {
+  $size: map-get($breakpoints, $device);
+  @if $size {
+    @media (min-width: $size) {
+      @content;
+    }
+  } @else {
+    @error "Unknown device '#{$device}'. Please use one of: #{map-keys($breakpoints)}.";
+  }
+}
