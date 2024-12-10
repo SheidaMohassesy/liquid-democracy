@@ -4,38 +4,32 @@ import styles from "./ContentContainer.module.scss";
 import ListView from "../ListView/ListView";
 import GridView from "../GridView/GridView";
 import Card from "../Card/Card";
+import { useEffect, useState } from "react";
 
 const ContentContainer = () => {
   const { isListSelected } = useAppContext();
+  const [cards, setCards] = useState([]);
 
-  const mockData = [
-    {
-      title: "Title of an external project - Starting in future",
-      location: "Mitte",
-      copyright: "copyright by photogr",
-      image: "assets/images/mock-bk-res/img01.png",
-      description:
-        "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
-    },
-    {
-      title: "Title of an external project - Starting in future",
-      location: "Mitte",
-      copyright: "copyright by photogr",
-      image: "assets/images/mock-bk-res/img01.png",
-      description:
-        "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
-    },
-    {
-      title: "Title of an external project - Starting in future",
-      location: "Mitte",
-      copyright: "copyright by photogr",
-      image: "assets/images/mock-bk-res/img01.png",
-      description:
-        "Berlin Online Engagement: Empowering citizens to shape their city's future via digital platforms. Fostering dialogue, collaboration, and civic action for inclusivity.",
-    },
-  ];
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await fetch("/api/mockEndpoint");
+        if (!response.ok) {
+          throw new Error("Network response was not ok");
+        }
+        const result = await response.json();
+        console.log(result);
+        if (result) {
+          setCards(result);
+        }
+      } catch (error) {
+        setError(error.message);
+      }
+    };
+    fetchData();
+  }, []);
 
-  const mockCards = mockData.map((card, index) => (
+  const mockCards = cards.map((card, index) => (
     <Card
       key={index}
       title={card.title}
