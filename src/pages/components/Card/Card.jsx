@@ -1,5 +1,6 @@
 import { useAppContext } from "@/contexts/AppContext";
 import styles from "./Card.module.scss";
+import Duration from "../ProgressBar/Duration";
 
 const Tag = ({ label }) => {
   return <div className={styles.tag}>{label}</div>;
@@ -26,6 +27,7 @@ const Card = ({ title, description, location, copyright, image }) => {
           </div>
           <div className={styles.title}>{title}</div>
           <div className={styles.description}>{description}</div>
+          <Duration percentage={30} />
         </div>
       </div>
     </div>

@@ -1,0 +1,16 @@
+.duration {
+  .progressBar {
+    background-color: #e2f0eb;
+    height: 4px;
+
+    .bar {
+      background-color: #00a982;
+      height: 4px;
+    }
+  }
+  .label {
+    margin-top: 5px;
+    font-size: 14px;
+    font-weight: 400;
+  }
+}
