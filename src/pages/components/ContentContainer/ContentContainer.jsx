@@ -37,6 +37,7 @@ const ContentContainer = () => {
       copyright={card.copyright}
       location={card.location}
       image={card.image}
+      days={card.days}
     />
   ));
   return (

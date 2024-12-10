@@ -1,6 +1,6 @@
 import styles from "./Duration.module.scss";
 
-const Duration = ({ percentage }) => {
+const Duration = ({ percentage, days }) => {
   return (
     <div className={styles.duration}>
       <div
@@ -14,7 +14,7 @@ const Duration = ({ percentage }) => {
         <div className={styles.bar} style={{ width: `${percentage}%` }}></div>
       </div>
       <div className={styles.label} aria-live="polite">
-        5 days left
+        {days} days left
       </div>
     </div>
   );

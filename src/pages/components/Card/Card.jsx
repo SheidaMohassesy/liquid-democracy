@@ -1,6 +1,6 @@
 import { useAppContext } from "@/contexts/AppContext";
 import styles from "./Card.module.scss";
-import Duration from "../ProgressBar/Duration";
+import Duration from "../Duration/Duration";
 
 const Tag = ({ label }) => {
   return (
@@ -10,7 +10,7 @@ const Tag = ({ label }) => {
   );
 };
 
-const Card = ({ title, description, location, copyright, image }) => {
+const Card = ({ title, description, location, copyright, image, days }) => {
   const { isListSelected } = useAppContext();
   return (
     <div
@@ -46,7 +46,11 @@ const Card = ({ title, description, location, copyright, image }) => {
             {title}
           </div>
           <div className={styles.description}>{description}</div>
-          <Duration percentage={30} aria-live="polite" />
+          <Duration
+            days={days}
+            percentage={100 - Number(days)}
+            aria-live="polite"
+          />
         </div>
       </div>
     </div>
