@@ -1,0 +1,57 @@
+.card {
+  .listView {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+    border-bottom: 1px solid gray;
+    max-width: 700px;
+  }
+  .gridView {
+    display: flex;
+    flex-direction: column;
+  }
+  .imageWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .contentWrapper {
+    display: flex;
+    flex-direction: column;
+  }
+  .image {
+    width: 230px;
+    height: auto;
+  }
+  .title {
+    font-weight: bold;
+    font-size: 17px;
+    margin-bottom: 5px;
+  }
+  .location {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+  .description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .leftGapWrapper {
+    margin-left: 15px;
+  }
+  .topGapWrapper {
+    margin-top: 15px;
+  }
+  .tags {
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    margin-bottom: 16px;
+    .tag {
+      background-color: #00c295;
+      padding: 4px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 13px;
+    }
+  }
+}
